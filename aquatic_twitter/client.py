@@ -22,11 +22,6 @@ class AquaticTwitter(object):
             access_token_key=access_token_key,
             access_token_secret=access_token_secret
         )
-        ####### TODO
-        # REMOVE
-        #import pdb
-        #pdb.set_trace()
-        ##########
         self.client.InitializeRateLimit()
 
         self.base_rate_limit_url= (
