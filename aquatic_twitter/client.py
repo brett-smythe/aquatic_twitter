@@ -12,7 +12,6 @@ from settings import aquatic_settings
 
 class AquaticTwitter(object):
 
-    # Add a client to log things
     def __init__(self, consumer_key, consumer_secret,
         access_token_key, access_token_secret, write_to_memcache=False):
         
@@ -131,6 +130,7 @@ class AquaticTwitter(object):
         print 'Get timeline!'
         return self.timeline_tweets
 
+    @_handle_twitter_errors
     @_update_memcache_limits
     def get_timeline_tweets_since_id(self, screen_name, since_id):
         """
