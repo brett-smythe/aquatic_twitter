@@ -1,0 +1,10 @@
+Package: aquatic-twitter
+Version: 0.1
+Architecture: amd64
+Maintainer: Brett Smythe <smythebrett@gmail.com>
+Installed-Size: 20015
+Pre-Depends: dpkg (>= 1.16.1), python2.7-minimal | python2.6-minimal
+Section: python
+Priority: extra
+Description: Twitter client for various projects
+ Twitter client for various projects

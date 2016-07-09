@@ -1,0 +1,6 @@
+aquatic-twitter (0.1) unstable; urgency=low
+
+  * af7229f Added missing error handling decorator
+
+
+ -- Brett Smythe <smythebrett@gmail.com>  Sat, 02 Jul 2016 15:27:45 +0000

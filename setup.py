@@ -13,12 +13,14 @@ with open('requirements.txt') as inf:
         reqs.append(line)
 
 setup(
-    name='aquatic_twitter',
-    version='0.0',
+    name='aquatic-twitter',
+    version='0.1',
     description='Twitter client for various projects',
     long_description=long_description,
     author='Brett Smythe',
     author_email='smythebrett@gmail.com',
+    maintainer='Brett Smythe',
+    maintainer_email='smythebrett@gmail.com',
     packages=find_packages(),
     install_requires=reqs
 )
