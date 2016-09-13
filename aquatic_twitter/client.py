@@ -46,6 +46,7 @@ class AquaticTwitter(object):
         """
         @wraps(func)
         def func_wrapper(self, *args, **kwargs):
+            ret_val = None
             try:
                 ret_val = func(self, *args, **kwargs)
             except twitter.TwitterError as e:
