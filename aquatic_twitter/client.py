@@ -1,9 +1,10 @@
-import sys, traceback
+# import sys, traceback
 from functools import wraps
 
 import twitter
 from pymemcache.client.base import Client as MemCacheClient
-from pymemcache.exceptions import ( MemcacheServerError,
+from pymemcache.exceptions import (
+    MemcacheServerError,
     MemcacheUnexpectedCloseError
 )
 
@@ -13,8 +14,9 @@ from settings import aquatic_settings
 class AquaticTwitter(object):
 
     def __init__(self, consumer_key, consumer_secret,
-        access_token_key, access_token_secret, write_to_memcache=False):
-        
+                 access_token_key, access_token_secret,
+                 write_to_memcache=False):
+
         self.client = twitter.Api(
             consumer_key=consumer_key,
             consumer_secret=consumer_secret,
@@ -23,7 +25,7 @@ class AquaticTwitter(object):
         )
         self.client.InitializeRateLimit()
 
-        self.base_rate_limit_url= (
+        self.base_rate_limit_url = (
             'https://api.twitter.com/1.1/application/'
             'rate_limit_status.json?resources={0}'
         )
@@ -127,7 +129,6 @@ class AquaticTwitter(object):
         self.timeline_tweets = self.client.GetUserTimeline(
             screen_name=screen_name, count=200
         )
-        print 'Get timeline!'
         return self.timeline_tweets
 
     @_handle_twitter_errors
@@ -148,9 +149,10 @@ class AquaticTwitter(object):
         Make a request to the twitter API to get the current rate limit status
         for the endpoint of '/statuses/user_timeline'
         """
-        self.user_tl_rate_url = self.base_rate_limit_url.format('statuses,search')
+        self.user_tl_rate_url = self.base_rate_limit_url.format(
+            'statuses,search'
+        )
         self.rate_limit_data = self.client.CheckRateLimit(
             self.user_tl_rate_url
         )
         return self.rate_limit_data
-
