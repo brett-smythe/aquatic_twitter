@@ -1,16 +1,17 @@
 """Twitter client for aquatic services"""
 # pylint: disable=import-error
 from functools import wraps
+import requests.exceptions
 
 import twitter
 
 
 class AquaticTwitter(object):
     """Class for interating with twitter API"""
-    # pylint: disable=too-many-arguments
     def __init__(self, consumer_key, consumer_secret,
                  access_token_key, access_token_secret,
                  write_to_memcache=False):
+        # pylint: disable=too-many-arguments, unused-argument
 
         self.client = twitter.Api(
             consumer_key=consumer_key,
@@ -29,7 +30,7 @@ class AquaticTwitter(object):
         """
         Handles hitting the twitter API ratelimit
         """
-        # pylint: disable=missing-docstring
+        # pylint: disable=missing-docstring, no-self-argument, not-callable
         @wraps(func)
         def func_wrapper(self, *args, **kwargs):
             ret_val = None
@@ -45,6 +46,11 @@ class AquaticTwitter(object):
                 elif 'Technical Error' in e.message:
                     # TODO do something with this
                     pass
+
+            # TODO: Handle more fine grained exceptions and do something
+            # more useful than return None
+            except requests.exceptions.RequestException as e:
+                ret_val = None
 
             return ret_val
 
