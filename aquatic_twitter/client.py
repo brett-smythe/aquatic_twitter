@@ -9,8 +9,7 @@ import twitter
 class AquaticTwitter(object):
     """Class for interating with twitter API"""
     def __init__(self, consumer_key, consumer_secret,
-                 access_token_key, access_token_secret,
-                 write_to_memcache=False):
+                 access_token_key, access_token_secret):
         # pylint: disable=too-many-arguments, unused-argument
 
         self.client = twitter.Api(
