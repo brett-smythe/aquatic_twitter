@@ -14,7 +14,7 @@ with open('requirements.txt') as inf:
 
 setup(
     name='aquatic-twitter',
-    version='0.1.4',
+    version='0.1.5',
     description='Twitter client for various projects',
     long_description=long_description,
     author='Brett Smythe',
