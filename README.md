@@ -39,5 +39,5 @@ first_status.id_str
 >"<tweet_id_as_you_would_use_above>"
 
 first_status.screen_name
->'twitter_screen_name'
+>"twitter_screen_name"
 ```
