@@ -19,8 +19,7 @@ class TwitterClientCases(unittest.TestCase):
             'fake_consumer_key',
             'fake_consumer_secret',
             'fake_token_key',
-            'fake_access_token',
-            False
+            'fake_access_token'
         )
         return test_client
 
