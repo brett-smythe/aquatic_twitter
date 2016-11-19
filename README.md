@@ -2,6 +2,8 @@
 
 Wrapper for interns-twitter around [python-twitter](https://github.com/bear/python-twitter)
 
+To see how this fits in with the other repos please see [Aquatic Services Wiki](https://github.com/brett-smythe/ansible_configs/wiki)
+
 ## Install
 ```
 python setup.py install
